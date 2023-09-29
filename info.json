@@ -1,0 +1,16 @@
+{
+  "contenidoStr": "{\n  \"name\": \"curso-backend-coderh\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"4_clase.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n",
+  "contenidoObj": {
+    "name": "curso-backend-coderh",
+    "version": "1.0.0",
+    "description": "",
+    "main": "4_clase.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  },
+  "size": 236
+}
