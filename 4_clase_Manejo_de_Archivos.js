@@ -66,7 +66,7 @@
 // // fs nos permitira acceder a las operaciones de los archivos
 
 // fs.writeFileSync("./ejemplo.txt", "Dios es mi pastor con el nada me faltara,");
-// // Prfiemra operacion: para escribir un archivo, el primer argumento/parametro de la ruta donde quedara el archivo y el nombre,
+// // Primera operacion: para escribir un archivo, el primer argumento/parametro de la ruta donde quedara el archivo y el nombre,
 // // El segundo argumento es el contenido del archivo
 
 // if (fs.existsSync) {
