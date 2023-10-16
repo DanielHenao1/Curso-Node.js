@@ -20,6 +20,7 @@
 // Para instalar un modulo npm install modulo_a_instalar
 // Para instalar dependencias npm install modulo_a_instalar (-D) o (--save)
 // Para utilizar nodemon debemos poner un script "scripts": "dev": "nodemon index.js",
+// Si no queremos instalar nodemon podemos utilizar node --watch index.js este comando es nativo de node
 
 // Para trabajar con dependencias necesitamos:
 // Paso 1:  Tener un proyecto vacío para trabajar
@@ -27,3 +28,5 @@
 // Paso 3: Correr el comando npm install nombre_del_modulo
 // Paso 4: Utilizar el nuevo módulo instalado.
 
+// Para verificar nuestras dependencias utilizamos (npm outdated) 
+// Para actualizar una version de una dependencia utilizamos (npm update)
