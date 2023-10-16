@@ -1,19 +1,29 @@
-// Crear un objeto para almacenar la cuenta de cada número
-const contadorNumeros = {};
+// Módulos nativos en Nodejs
 
-// Generar 10,000 números aleatorios en el rango de 1 a 20
-for (let i = 0; i < 10000; i++) {
-  const numeroAleatorio = Math.floor(Math.random() * 20) + 1;
+// fs
+// Módulo utilizado para manejo de archivos
+// Sirve para manejar otro modelo de persistencia.
 
-  // Verificar si el número ya está en el objeto contadorNumeros
-  if (contadorNumeros[numeroAleatorio]) {
-    contadorNumeros[numeroAleatorio]++;
-  } else {
-    contadorNumeros[numeroAleatorio] = 1;
-  }
-}
+// crypto
+// Permite hacer operaciones de encriptación y cifrado para información sensible
+// Sirve para mejorar la seguridad de los datos
 
-// Mostrar los resultados en la consola
-for (let numero in contadorNumeros) {
-  console.log(`Número ${numero}: ${contadorNumeros[numero]} veces`);
-}
+// http
+// Permite crear un servidor básico bajo el protocolo http
+// Sirve para crear nuestro primer servidor de solicitud/respuesta
+
+// path
+// Permite el correcto manejo de rutas
+// Sirve para evitar ambigüedad al trabajar con rutas
+
+// Para iniciar un proyecto iniciamos (npm init -y)
+// Para instalar un modulo npm install modulo_a_instalar
+// Para instalar dependencias npm install modulo_a_instalar (-D) o (--save)
+// Para utilizar nodemon debemos poner un script "scripts": "dev": "nodemon index.js",
+
+// Para trabajar con dependencias necesitamos:
+// Paso 1:  Tener un proyecto vacío para trabajar
+// Paso 2:  Correr el comando npm init
+// Paso 3: Correr el comando npm install nombre_del_modulo
+// Paso 4: Utilizar el nuevo módulo instalado.
+
