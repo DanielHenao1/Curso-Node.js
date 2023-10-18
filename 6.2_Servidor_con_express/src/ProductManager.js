@@ -1,5 +1,4 @@
-// Importa el módulo 'fs' para operaciones de archivo.
-const fs = require("fs");
+import fs from "fs";
 
 // Define la clase ProductManager para gestionar productos.
 export class ProductManager {
@@ -7,7 +6,7 @@ export class ProductManager {
     // Inicializa un arreglo de productos, el próximo ID de producto y el nombre de archivo.
     this.products = [];
     this.nextProductId = 1;
-    this.productFileName = "products.json";
+    this.productFileName = "./src/products.json";
   }
 
   // Método para agregar un nuevo producto.
@@ -144,24 +143,26 @@ export class ProductManager {
   }
 }
 
-// Crea una instancia de ProductManager.
-const productManager = new ProductManager();
-
-// Función autoinvocada asincrónica para probar las operaciones del administrador de productos.
-(async () => {
+// Función asincrónica para probar las operaciones del administrador de productos.
+async function main() {
   try {
+    // Crea una instancia de ProductManager.
+    const productManager = new ProductManager();
+
     // Carga productos desde un archivo (o inicializa si es la primera vez).
     await productManager.loadProductsFromFile();
 
     // Agrega tres productos de ejemplo.
+
     await productManager.addProduct(
-      "Laptop",
-      "Laptop de última generación",
+      "TodoenUno",
+      "AllinOne de última generación",
       999.99,
-      "laptop.jpg",
-      "LPT001",
+      "allinOne.jpg",
+      "LPT002",
       10
     );
+
     await productManager.addProduct(
       "Impresora",
       "Impresora de alta calidad",
@@ -179,6 +180,23 @@ const productManager = new ProductManager();
       15
     );
 
+    await productManager.addProduct(
+      "Televisor",
+      "Televisor de alta calidad",
+      699.99,
+      "tvsmart.jpg",
+      "SPH002",
+      10
+    );
+    await productManager.addProduct(
+      "Laptop",
+      "Laptop de última generación",
+      999.99,
+      "laptop.jpg",
+      "LPT001",
+      10
+    );
+
     // Obtiene y muestra todos los productos.
     const allProducts = productManager.getProducts();
     console.log("Todos los productos:", allProducts);
@@ -191,11 +209,14 @@ const productManager = new ProductManager();
     });
 
     // Elimina un producto y muestra los productos actualizados.
-    const productIdToDelete = 2;
+    const productIdToDelete = 4;
     await productManager.deleteProduct(productIdToDelete);
 
     console.log("Productos actualizados:", productManager.getProducts());
   } catch (err) {
     console.error("Error en la operación:", err);
   }
-})();
+}
+
+// Llama a la función principal.
+main();

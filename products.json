@@ -16,5 +16,14 @@
     "thumbnail": "smartphone.jpg",
     "code": "SPH001",
     "stock": 15
+  },
+  {
+    "id": 4,
+    "title": "Impresora",
+    "description": "Impresora de última generación",
+    "price": 599.99,
+    "thumbnail": "impresora.jpg",
+    "code": "IMP001",
+    "stock": 100
   }
 ]
