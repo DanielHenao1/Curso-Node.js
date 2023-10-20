@@ -1,3 +1,5 @@
+// // cogido actividad 7.1 codigo Sincronico
+
 // // Importa el módulo Express
 // import express from "express";
 
@@ -95,7 +97,7 @@
 //   // Obtiene el parámetro 'pos' de la solicitud y lo convierte en un número entero
 //   const pos = parseInt(req.params.pos);
 //   // Divide la variable 'frase' en caracteres individuales
-//   const palabras = frase.split("");
+//   const palabras = frase.split(" ");
 
 //   // Verifica si 'pos' está dentro de los límites válidos
 //   if (pos >= 1 && pos <= palabras.length) {
@@ -115,3 +117,106 @@
 // app.listen(port, () =>
 //   console.log(`El servidor está escuchando en el puerto ${port}`)
 // );
+
+// cogido actividad 7.1 codigo Asincronico
+import express from "express";
+
+const app = express();
+app.use(express.json());
+
+const port = 8080;
+
+let frase = "Frase inicial";
+
+app.get("/api/frase", async (req, res) => {
+  try {
+    // Simula una operación asincrónica
+    await sleep(1000);
+    res.json({ frase });
+  } catch (error) {
+    res.status(500).json({ error: "Error en la solicitud." });
+  }
+});
+
+app.get("/api/palabras/:pos", async (req, res) => {
+  try {
+    const pos = parseInt(req.params.pos);
+    const palabras = frase.split(" ");
+    if (pos >= 1 && pos <= palabras.length) {
+      const buscada = palabras[pos - 1];
+      await sleep(1000);
+      res.json({ buscada });
+    } else {
+      res.status(404).json({ error: "La posición especificada no es válida." });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error en la solicitud." });
+  }
+});
+
+app.post("/api/palabras", async (req, res) => {
+  try {
+    const { palabra } = req.body;
+    if (palabra) {
+      frase += ` ${palabra}`;
+      const palabras = frase.split(" ");
+      const pos = palabras.length;
+      await sleep(1000);
+      res.json({ agregada: palabra, pos });
+    } else {
+      res
+        .status(400)
+        .json({ error: "El campo 'palabra' es requerido en la solicitud." });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error en la solicitud." });
+  }
+});
+
+app.put("/api/palabras/:pos", async (req, res) => {
+  try {
+    const pos = parseInt(req.params.pos);
+    const { palabra } = req.body;
+    const palabras = frase.split(" ");
+    if (pos >= 1 && pos <= palabras.length && palabra) {
+      const anterior = palabras[pos - 1];
+      palabras[pos - 1] = palabra;
+      frase = palabras.join(" ");
+      await sleep(1000);
+      res.json({ actualizada: palabra, anterior });
+    } else {
+      res.status(400).json({
+        error:
+          "La posición especificada no es válida o falta la palabra en la solicitud.",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error en la solicitud." });
+  }
+});
+
+app.delete("/api/palabras/:pos", async (req, res) => {
+  try {
+    const pos = parseInt(req.params.pos);
+    const palabras = frase.split(" "); // Cambiar split("") a split(" ")
+
+    if (pos >= 1 && pos <= palabras.length) {
+      const eliminada = palabras.splice(pos - 1, 1); // Corregir la eliminación de palabras
+      frase = palabras.join(" ");
+      await sleep(1000);
+      res.json({ eliminada: eliminada[0] });
+    } else {
+      res.status(404).json({ error: "La posición especificada no es válida." });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error en la solicitud." });
+  }
+});
+
+app.listen(port, () =>
+  console.log(`El servidor está escuchando en el puerto ${port}`)
+);
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
