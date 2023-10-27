@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Impresora Lenovo DeskJet",
+    "description": "Impresora de inyección de tinta",
+    "code": "GHI1005",
+    "price": 79.99,
+    "stock": 70,
+    "category": "Electrónica",
+    "thumbnails": [
+      "ruta19.jpg",
+      "ruta20.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Laptop Lenovo",
+    "description": "Laptop para el hogar",
+    "code": "GHI1007",
+    "price": 89.99,
+    "stock": 300,
+    "category": "Electrónica",
+    "thumbnails": [
+      "ruta13.jpg",
+      "ruta22.jpg"
+    ]
+  }
+]
