@@ -1,0 +1,51 @@
+[
+  {
+    "id": "226279",
+    "products": [
+      {
+        "title": "Impresora Lenovo DeskJet",
+        "product": "1",
+        "quantity": 526
+      }
+    ]
+  },
+  {
+    "id": "63434",
+    "products": [
+      {
+        "title": "Impresora Lenovo DeskJet",
+        "product": "2",
+        "quantity": 526
+      }
+    ]
+  },
+  {
+    "id": "572844",
+    "products": [
+      {
+        "title": "Laptop Lenovo",
+        "product": "3",
+        "quantity": 100
+      }
+    ]
+  },
+  {
+    "id": "456437",
+    "products": [
+      {
+        "title": "Laptop Lenovo",
+        "product": "3",
+        "quantity": 350
+      },
+      {
+        "title": "Laptop Lenovo",
+        "product": "2",
+        "quantity": 50
+      }
+    ]
+  },
+  {
+    "id": "99812",
+    "products": []
+  }
+]
