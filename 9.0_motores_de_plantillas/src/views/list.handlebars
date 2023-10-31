@@ -1,0 +1,14 @@
+{{! metodo para recorrer arrays en handlebars se llama each }}
+
+<ul>
+  {{#if users.length}}
+    {{#each users}}
+      <li>{{firsName}}</li>
+      <li>{{lastName}}</li>
+      <li>{{mail}}</li>
+      <li>{{phone}}</li>
+    {{/each}}
+  {{else}}
+    <p>No existen usuarios</p>
+  {{/if}}
+</ul>
